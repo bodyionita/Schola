@@ -4,31 +4,32 @@
     if ($conn->connect_error) {
         die("Connection with database failed: " . $conn->connect_error);
     }
-    $query = "SELECT users.username, user_details.first_name, user_details.last_name, users.id,
+    if (isset($_SESSION["username"]) {
+        $query = "SELECT users.username, user_details.first_name, user_details.last_name, users.id,
               user_details.address, user_details.dob, user_details.email, user_details.nationality,
               users.typeId 
               FROM users
               INNER JOIN user_details ON user_details.userId = users.id
               INNER JOIN user_types ON users.typeId = user_types.id
-              WHERE users.username='".$_SESSION["username"]."'";
-    $result=$conn->query($query);
-    $user = [];
-    while ($row = $result->fetch_array())
-    {
-        $user = ["username" => $row["username"],
-                 "first_name" => $row["first_name"],
-                 "last_name" => $row["last_name"],
-                 "id" => $row["id"],
-                 "typeId" => $row["typeId"],
-                 "dob" => $row["dob"],
-                 "address" => $row["address"],
-                 "email" => $row["email"],
-                 "nationality" => $row["nationality"] ];
-    }
-    if (isset($user["id"])) {
-        $files = scandir("./uploads/user/" . $user["id"]);
-        if (count($files) >= 2)
-            $file = $files[2];
+              WHERE users.username='" . $_SESSION["username"] . "'";
+        $result = $conn->query($query);
+        $user = [];
+        while ($row = $result->fetch_array()) {
+            $user = ["username" => $row["username"],
+                "first_name" => $row["first_name"],
+                "last_name" => $row["last_name"],
+                "id" => $row["id"],
+                "typeId" => $row["typeId"],
+                "dob" => $row["dob"],
+                "address" => $row["address"],
+                "email" => $row["email"],
+                "nationality" => $row["nationality"]];
+        }
+        if (isset($user["id"])) {
+            $files = scandir("./uploads/user/" . $user["id"]);
+            if (count($files) >= 2)
+                $file = $files[2];
+        }
     }
 ?>
 
