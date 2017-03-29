@@ -4,7 +4,7 @@
     if ($conn->connect_error) {
         die("Connection with database failed: " . $conn->connect_error);
     }
-    if (isset($_SESSION["username"]) {
+    if (isset($_SESSION["username"])) {
         $query = "SELECT users.username, user_details.first_name, user_details.last_name, users.id,
               user_details.address, user_details.dob, user_details.email, user_details.nationality,
               users.typeId 
