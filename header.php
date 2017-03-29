@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors',1);
+
     require_once('database.php');
     $conn = new mysqli($servername, $usn, $psw,$database);
     if ($conn->connect_error) {
