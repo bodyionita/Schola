@@ -1,8 +1,8 @@
 <?php
-$servername='localhost';
-$usn='root';
+$servername='';
+$usn='';
 $psw='';
-$database='schola';
+$database='';
 
 foreach ($_SERVER as $key => $value) {
     if (strpos($key, "MYSQLCONNSTR_localdb") !== 0) {
