@@ -1,0 +1,49 @@
+body {
+  min-height: 500px;
+  padding-top: 25px;
+  background-color: #eeeeee;
+}
+
+div.carousel {
+    margin-bottom: 80px;
+}
+
+.navbar-default .navbar-nav li a {
+    line-height: 20px;
+    height: 70px;
+    padding-top: 23px;
+}
+.divider-vertical {
+    height: 70px;
+    margin: 0 0px;
+    border-left: 2px solid #eee;
+    border-right: 1px solid #ccc;
+}
+
+.navbar-default .navbar-brand{
+    margin-top: -12px;
+}
+
+.fa-xlg{font-size: 1.6em;}
+
+@media (min-width: 500px) {
+  .navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+}
+
+.carousel-content {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    right: auto;
+    width: 80%;
+    color: #fff;
+}
+
+.border-right {
+    border-right: 2px solid #ccc;
+}
+
